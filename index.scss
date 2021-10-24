@@ -1,0 +1,488 @@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ GENERAL @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  padding: 1.5em;
+  max-width: 960px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    padding: 4.5em;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+.d-none {
+  display: none;
+}
+// ############################################ HEADER ############################################
+section#header {
+  overflow: hidden;
+  position: relative;
+
+  .image-desktop-area {
+    display: flex;
+    justify-content: center;
+
+    img.img-wrapper {
+      overflow: hidden;
+      background-color: #75bc97;
+    }
+  }
+
+  .logo-content {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    left: 0;
+
+    .logo {
+      position: absolute;
+      top: 0;
+    }
+
+    .logo-text {
+      font-size: 3.6em;
+      line-height: 95px;
+      color: white;
+      max-width: 6em;
+
+      @media (min-width: 768px) {
+        font-size: 1.6em;
+        line-height: 48px;
+      }
+      @media (min-width: 960px) {
+        font-size: 2.6em;
+        line-height: 60px;
+      }
+      @media (min-width: 1200px) {
+        font-weight: 700;
+        font-size: 4.6em;
+        line-height: 85.33px;
+        color: white;
+      }
+      @media (min-width: 1300px) {
+        margin: 20px 0;
+      }
+      @media (min-width: 1500px) {
+        margin: 55px 0;
+      }
+    }
+
+    .arrow-size {
+      width: 35px;
+      height: 39px;
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ FILTER AREA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+section#filters {
+  .filter-custom {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5em 0px;
+
+    .filter-field {
+      display: grid;
+      grid-row-gap: 0.5em;
+      max-width: 14.7em;
+
+      .filter-img {
+        width: 5em;
+      }
+
+      .invert-img {
+        transform: scaleX(-1);
+        width: 6.5em;
+      }
+
+      .filter-text {
+        font-family: "Montserrat";
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 22px;
+        color: #848484;
+        max-width: 14.7em;
+      }
+
+      select {
+        position: relative;
+        height: 40px;
+        border: 1px solid #a8a8a8;
+        border-radius: 50px;
+        margin-top: 1em;
+        padding: 10px;
+        color: #a8a8a8;
+
+        option:hover {
+          background-color: #75bc97;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ RESULT AREA $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+section#result {
+  background: #f2f2f2;
+
+  .no-result {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    padding: 3em 0;
+
+    .result-empty h1 {
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 54.86px;
+      color: #a9a9a9;
+      padding: 15px 0;
+    }
+
+    .result-text {
+      max-width: 14em;
+
+      span {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 27px;
+        color: #a9a9a9;
+      }
+    }
+  }
+
+  .result-content-body {
+    padding: 3em 0;
+  }
+  .pick-img {
+    padding: 1em 0;
+    width: 10.5em;
+  }
+
+  .pick-text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 67px;
+    color: #0c261c;
+  }
+
+  .card {
+    width: 240px;
+    height: 279px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 225px;
+  }
+
+  .card-body {
+    padding: 0.8em;
+
+    span {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 28px;
+      color: #1e6b4e;
+    }
+  }
+
+  .card-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon-align {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  #generateIcons {
+    padding: 0 0.2em;
+  }
+
+  .plant-img {
+    width: auto;
+    padding: 1em 0;
+    height: 12.8em;
+    overflow: hidden;
+  }
+
+  #generateResultContent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+
+    @media screen and (max-width: 767px) {
+      display: grid;
+      height: 20em;
+      overflow-x: auto;
+      grid-auto-flow: column;
+    }
+
+    @media (min-width: 768px) and (max-width: 849px) {
+      grid-template-columns: repeat(2, 1fr);
+      overflow-x: auto;
+      grid-auto-flow: column;
+      height: 19em;
+    }
+
+    @media (min-width: 850px) and (max-width: 1200px) {
+      grid-template-columns: repeat(3, 2fr);
+    }
+  }
+
+  .staff-favorite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5em;
+    width: 11em;
+    position: absolute;
+    top: 6%;
+    background: #75bc97;
+    color: white;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .first-card {
+    width: 100%;
+    height: 37.5em;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    .card-header {
+      max-height: none;
+
+      img.plant-img {
+        padding: 3em 0;
+        height: 28em;
+      }
+    }
+
+    .card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 2.5em;
+      margin-top: 1em;
+
+      > span {
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 37px;
+      }
+
+      .card-info {
+        display: grid;
+        justify-content: flex-end;
+        justify-items: right;
+        align-content: center;
+        span {
+          font-size: 24px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      width: auto;
+      height: auto;
+      grid-row: auto;
+      grid-column: auto;
+      .card-header {
+        // max-height: ;
+
+        img.plant-img {
+          width: auto;
+          padding: 1em 0;
+          height: 12.8em;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .btn-area {
+    margin: 1em 0 4em 0;
+  }
+
+  .btn {
+    width: 100%;
+    height: 55px;
+    background: transparent;
+    border: 1px solid #15573f;
+    border-radius: 25px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #196146;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    img {
+      margin-right: 1em;
+    }
+  }
+}
+
+// ##################################### PRE LOAD #####################################
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 3, 3, 0.3);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 80px;
+  height: 80px;
+}
+
+.loader::after {
+  content: "";
+  display: block;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  margin: 8px;
+  animation: spin 1.2s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  section#header .image-desktop-area {
+    display: none;
+  }
+  section#header .image-mobile-area {
+    display: grid;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background-color: #75bc97;
+
+    .img-wrapper-leaves {
+      height: 25em;
+      width: 29.5em;
+    }
+
+    .img-wrapper-person {
+      height: 18em;
+      width: 19em;
+      justify-self: center;
+    }
+  }
+
+  section#header .logo-content {
+    position: absolute;
+    top: 4%;
+
+    .logo-text {
+      font-size: 2em;
+      line-height: 50px;
+      color: white;
+      max-width: 6em;
+      margin: 1em 0 1em 0;
+    }
+  }
+  section#filters .filter-custom {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2em;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  section#header .logo-content {
+    top: 6%;
+  }
+  section#header .image-desktop-area {
+    display: none;
+  }
+  section#header .image-mobile-area {
+    display: grid;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background-color: #75bc97;
+
+    .img-wrapper-leaves {
+      height: 38em;
+      width: 47em;
+    }
+
+    .img-wrapper-person {
+      height: 18em;
+      width: 19em;
+      justify-self: center;
+    }
+  }
+  section#filters .filter-custom {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2em;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section#header .image-desktop-area {
+    display: flex;
+  }
+  section#header .image-mobile-area {
+    display: none;
+  }
+}
