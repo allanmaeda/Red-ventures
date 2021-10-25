@@ -6,26 +6,11 @@ window.onload = () => {
 const overlay = document.querySelector(".overlay");
 const form = document.querySelector("#filterForm");
 const imageNoResults = document.querySelector("#imageNoResults");
-const staffFavorite = document.querySelector("#staffFavorite");
-
 const generateNoResult = document.querySelector("#generateNoResult");
 const generateResultContent = document.querySelector("#generateResultContent");
 const isNoResultDiv = document.querySelector(".no-result");
 const isResultContentDiv = document.querySelector(".result-content");
-const generateIcons = document.querySelector("#generateIcons");
 const btnTop = document.querySelector("#btnTop");
-const firstCard = document.querySelector(".first-card");
-// const innerWidth = window.innerWidth;
-
-// innerWidth.addEventListener('onchange', function() {
-
-// })
-
-window.addEventListener("resize", function () {
-  if (document.clientWidth < 900) {
-    console.log("menor que 1200");
-  }
-});
 
 btnTop.addEventListener(
   "click",
@@ -41,9 +26,9 @@ form.addEventListener("change", (event) => {
   var selects = document.getElementById("filterForm").elements;
 
   if (
-    selects.filterSunlight.value != "" &&
-    selects.filterWater.value != "" &&
-    selects.filterPet.value != ""
+    selects.filterSunlight.value !== "" &&
+    selects.filterWater.value !== "" &&
+    selects.filterPet.value !== ""
   ) {
     getResponse(
       selects.filterSunlight.value,
@@ -111,9 +96,8 @@ function noResults(error) {
 
 function resultContent(obj) {
   obj.sort((a, b) =>
-    a.staff_favorite == true ? -1 : b.staff_favorite == true ? 1 : 0
+    a.staff_favorite === true ? -1 : b.staff_favorite === true ? 1 : 0
   );
-  console.log(obj);
   isResultContent();
   removeImage();
 
@@ -155,7 +139,7 @@ function setStaffFavorite(obj) {
   let isntStaffFavorite = [];
 
   obj.forEach((element, i) => {
-    if (element.staff_favorite != true) {
+    if (element.staff_favorite !== true) {
       isntStaffFavorite.push(i);
     }
   });
@@ -167,37 +151,37 @@ function setStaffFavorite(obj) {
 }
 
 function defineIcon(icon) {
-  if (icon == true) {
+  if (icon === true) {
     return `
       <img src="https://i.imgur.com/n8m0T2O.png" />
     `;
   }
-  if (icon == false) {
+  if (icon === false) {
     return `
       <img src="https://i.imgur.com/nkBXKdT.png" />
     `;
   }
-  if (icon == "regularly") {
+  if (icon === "regularly") {
     return `
       <img src="https://i.imgur.com/OM8d4MD.png" />
     `;
   }
-  if (icon == "daily") {
+  if (icon === "daily") {
     return `
       <img src="https://i.imgur.com/UcjSWoB.png" />
     `;
   }
-  if (icon == "rarely") {
+  if (icon === "rarely") {
     return `
       <img src="https://i.imgur.com/YxwxsSn.png" />
     `;
   }
-  if (icon == "no") {
+  if (icon === "no") {
     return `
       <img src="https://i.imgur.com/4bpwbDe.png" />
     `;
   }
-  if (icon == "low" || icon == "high") {
+  if (icon === "low" || icon === "high") {
     return `
       <img src="https://i.imgur.com/DDudjAd.png" />
     `;
