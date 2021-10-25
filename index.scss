@@ -59,7 +59,7 @@ section#header {
 
       @media (min-width: 768px) {
         font-size: 1.6em;
-        line-height: 48px;
+        line-height: 39px;
       }
       @media (min-width: 960px) {
         font-size: 2.6em;
@@ -400,7 +400,7 @@ section#result {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   section#header .image-desktop-area {
     display: none;
   }
@@ -481,7 +481,6 @@ section#result {
 @media screen and (min-width: 768px) {
   section#header .image-desktop-area {
     display: flex;
-    height: 20em;
   }
   section#header .image-mobile-area {
     display: none;
